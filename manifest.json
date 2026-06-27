@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Caru.vip Xianyu Helper",
+  "version": "2.0.0",
+  "description": "Analisi hardware e conversione valori. Copyright (c) 2026 Caru.vip. CC BY-NC-SA 4.0.",
+  "icons": {
+    "128": "logo.png"
+  },
+  "permissions": [
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "*://*.cssbuy.com/*",
+    "https://*.supabase.co/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.goofish.com/*",
+        "*://*.cssbuy.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "logo.png",
+        "icons/*"
+      ],
+      "matches": [
+        "*://*.goofish.com/*",
+        "*://*.cssbuy.com/*",
+        "*://*.taobao.com/*"
+      ]
+    }
+  ]
+}

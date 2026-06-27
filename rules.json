@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "queryTransform": {
+            "addOrReplaceParams": [
+              { "key": "promotionCode", "value": "8d34a047f90d9d07" }
+            ]
+          }
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "*://*.cssbuy.com/item-*",
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]
