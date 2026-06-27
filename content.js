@@ -1492,7 +1492,7 @@ else if (window.location.hostname.includes('goofish.com')) {
 
             <div style="margin-top: 12px; padding-top: 8px; display: flex; align-items: center; justify-content: space-between; gap: 10px;">
                 <div style="font-size: 6.5px; opacity: 0.75; text-align: left; line-height: 1.2; color: #eee; padding-right: 8px; padding-top: 9px;">
-                    AVVISO: Il bot fornisce solo analisi tecnica. <br> Non costituisce raccomandazione d'acquisto. Caru.vip © 2026 | Licenza CC BY-NC-SA 4.0
+                    AVVISO: Il bot fornisce solo analisi tecnica. <br> Non costituisce raccomandazione d'acquisto. Caru.vip © 2026 | CC BY-NC-SA 4.0
                 </div>
                 <div style="opacity: 0.75; flex-shrink: 0; margin-bottom: 2px; padding-top: 15px;">
                     ${GEMINI_ICON_SVG}
@@ -1557,23 +1557,23 @@ else if (window.location.hostname.includes('goofish.com')) {
 
             if (text.includes('来闲鱼') || text.includes('加入闲鱼')) {
                 const mAnno = text.match(/(\d+)\s*年/);
-                if (mAnno) tempo = mAnno[1] + ' Anni';
+                if (mAnno) tempo = mAnno[1] + ' ' + 'Anni';
                 else {
                     const mGiorno = text.match(/(\d+)\s*天/);
-                    if (mGiorno) tempo = mGiorno[1] + ' Giorni';
+                    if (mGiorno) tempo = mGiorno[1] + ' ' + 'Giorni';
                     else {
                         const mStr = text.match(/\d+/);
-                        if (mStr) tempo = mStr[0] + (text.includes('天') ? ' Giorni' : ' Anni');
+                        if (mStr) tempo = mStr[0] + (text.includes('天') ? ' ' + 'Giorni' : ' ' + 'Anni');
                     }
                 }
             }
         });
 
-        let txt = "Neutro", statusCol = "#72c1f5ff";
-        if (v > 10000 && f >= 95) { txt = "💎 Affidabile"; statusCol = "#2ecc71"; }
-        else if (f >= 99 && v >= 100) { txt = "✅ Affidabile"; statusCol = "#27ae60"; }
-        else if (f >= 98 && v >= 50) { txt = "🟡 Nella media"; statusCol = "#f1c40f"; }
-        else if (f <= 90 || v === 0) { txt = "⚠️ Pericoloso"; statusCol = "#ff4f3b"; }
+        let txt = 'Neutro', statusCol = "#72c1f5ff";
+        if (v > 10000 && f >= 95) { txt = '💎 Affidabile'; statusCol = "#2ecc71"; }
+        else if (f >= 99 && v >= 100) { txt = '✅ Affidabile'; statusCol = "#27ae60"; }
+        else if (f >= 98 && v >= 50) { txt = '🟡 Nella media'; statusCol = "#f1c40f"; }
+        else if (f <= 90 || v === 0) { txt = '⚠️ Pericoloso'; statusCol = "#ff4f3b"; }
 
         const savedX = localStorage.getItem('ic-card-x') || '24px';
         const savedY = localStorage.getItem('ic-card-y') || '24px';
@@ -1817,7 +1817,7 @@ else if (window.location.hostname.includes('goofish.com')) {
 
         searchContainer.innerHTML = `
             <img src="${CONFIG.icons.logo}" style="width: 22px; height: 22px; border-radius: 6px;">
-            <input type="text" id="ic-magic-input" placeholder="Cosa vuoi importare oggi? (in italiano)"
+            <input type="text" id="ic-magic-input" placeholder="Cosa vuoi importare oggi?"
                 style="flex: 1; background: transparent; border: none; outline: none; color: #fff; font-size: 14px; letter-spacing: -0.2px; font-weight: 500; min-width: 0;">
             <button id="ic-magic-btn" style="background: #ffda00; color: #000; border: none; padding: 8px 16px; border-radius: 16px; font-weight: 900; font-size: 12px; cursor: pointer; transition: 0.2s; text-transform: uppercase; display: flex; align-items: center; gap: 6px;">
                 Cerca
@@ -1927,11 +1927,11 @@ else if (window.location.hostname.includes('goofish.com')) {
         };
 
         const maps = {
-            'O1CN01MQosre1EmUmuzzD3k_!!6000000000394-2-tps-252-60.png': generaCondizioneSVG('LIEVI SEGNI D\'USO'),
+            'O1CN01MQosre1EmUmuzzD3k_!!6000000000394-2-tps-252-60.png': generaCondizioneSVG("LIEVI SEGNI D'USO"),
             'O1CN015hOhg21hTpVIveeDA_!!6000000004279-2-tps-252-60.png': generaCondizioneSVG('NUOVO DI ZECCA'),
             'O1CN01yU5CER1wslIj9m7bv_!!6000000006364-2-tps-252-60.png': generaCondizioneSVG('QUASI NUOVO'),
             'O1CN01vCudtD1nBPJMMViwS_!!6000000005051-2-tps-252-60.png': generaCondizioneSVG('ALCUNI GRAFFI'),
-            'O1CN01dd00eW1ebfQy3geFl_!!6000000003890-2-tps-252-60.png': generaCondizioneSVG('SEGNI EVIDENTI D\'USO')
+            'O1CN01dd00eW1ebfQy3geFl_!!6000000003890-2-tps-252-60.png': generaCondizioneSVG("SEGNI EVIDENTI D'USO")
         };
 
         container.querySelectorAll('img').forEach(img => {
@@ -1950,30 +1950,14 @@ else if (window.location.hostname.includes('goofish.com')) {
         if (!window.location.pathname.includes('/search')) return;
 
         const MAP_FILTRI = {
-            "综合": "Rilevanza",
-            "最近活跃": "Online Recente",
-            "距离最近": "Più Vicino",
-            "信用排序": "Affidabilità",
-            "新降价": "Sconti",
-            "新发布": "Pubblicazione",
-            "最新": "Più Recente",
-            "1天内": "Ultimo giorno",
-            "3天内": "3 giorni",
-            "7天内": "7 giorni",
-            "14天内": "14 giorni",
-            "价格": "Prezzo",
-            "价格从低到高": "Prezzo Più Basso",
-            "价格从高到低": "Prezzo Più Alto",
-            "确定": "Conferma",
-            "区域": "Regione",
-            "个人闲置": "Privato",
-            "验货宝": "Ispezione",
-            "验号担保": "Garanzia",
-            "包邮": "Spedizione Gratuita",
-            "超赞鱼小铺": "Negozio VIP",
-            "全新": "Nuovo",
-            "严选": "Premium",
-            "转卖": "Rivendita"
+            "综合": "Rilevanza", "最近活跃": "Online Recente", "距离最近": "Più Vicino",
+            "信用排序": "Affidabilità", "新降价": "Sconti", "新发布": "Pubblicazione",
+            "最新": "Più Recente", "1天内": "Ultimo giorno", "3天内": "3 giorni",
+            "7天内": "7 giorni", "14天内": "14 giorni", "价格": "Prezzo",
+            "价格从低到高": "Prezzo Più Basso", "价格从高到低": "Prezzo Più Alto",
+            "确定": "Conferma", "区域": "Regione", "个人闲置": "Privato",
+            "验货宝": "Ispezione", "验号担保": "Garanzia", "包邮": "Spedizione Gratuita",
+            "超赞鱼小铺": "Negozio VIP", "全新": "Nuovo", "严选": "Premium", "转卖": "Rivendita"
         };
 
         // 1. Traduce titoli e voci dei dropdown
@@ -2127,13 +2111,13 @@ else if (window.location.hostname.includes('goofish.com')) {
             }
             if (text.includes('来闲鱼') || text.includes('加入闲鱼')) {
                 const mAnno = text.match(/(\d+)\s*年/);
-                if (mAnno) tempo = mAnno[1] + ' Anni';
+                if (mAnno) tempo = mAnno[1] + ' ' + 'Anni';
                 else {
                     const mGiorno = text.match(/(\d+)\s*天/);
-                    if (mGiorno) tempo = mGiorno[1] + ' Giorni';
+                    if (mGiorno) tempo = mGiorno[1] + ' ' + 'Giorni';
                     else {
                         const mStr = text.match(/\d+/);
-                        if (mStr) tempo = mStr[0] + (text.includes('天') ? ' Giorni' : ' Anni');
+                        if (mStr) tempo = mStr[0] + (text.includes('天') ? ' ' + 'Giorni' : ' ' + 'Anni');
                     }
                 }
             }

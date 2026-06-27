@@ -22,3 +22,15 @@ L'assistente definitivo per l'importazione su Xianyu (Goofish) e CSSBuy, ora pot
 4. Cliccare sul pulsante **Carica estensione non pacchettizzata** (Load unpacked) e selezionare la cartella dove si è salvata l'estensione.
 5. Fissare l'estensione nella barra del browser e accedere al sito Xianyu!
 
+---
+
+## 🛡️ Licenza, Proprietà e Crediti
+Questo progetto è un *Fork* (modifica) e rimane sotto la licenza **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**.
+
+* **Autore Originale (Base v1.5.x):** Slet
+* **Modifiche, UX e Integrazione IA (v1.9.x):** Caru.vip
+
+**Regole rigorose di utilizzo:**
+1. **Attribuzione:** I crediti all'autore originale (Slet) e agli autori delle modifiche devono essere sempre mantenuti.
+2. **Uso Non Commerciale:** È severamente **vietata la vendita** di questo software, la sua inclusione in pacchetti a pagamento o la vendita di versioni derivate. È uno strumento della comunità.
+3. **Condivisione allo Stesso Modo:** Qualsiasi modifica futura apportata a partire da questo codice deve essere obbligatoriamente pubblicata sotto questa stessa licenza gratuita e aperta.
